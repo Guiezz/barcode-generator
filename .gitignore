@@ -2,4 +2,5 @@
 .venv
 .DS_Store
 .vscode
-.png
+.pytest_cache
+```

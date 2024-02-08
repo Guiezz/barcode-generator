@@ -2,9 +2,9 @@ from typing import Dict
 from src.drivers.barcode_handler import BarcodeHandler
 
 class TagCreatorController:
-    """
+    '''
         responsability for implementing business rules
-    """
+    '''
 
     def create(self, product_code: str) -> Dict:
         path_from_tag = self.__create_tag(product_code)
@@ -17,8 +17,10 @@ class TagCreatorController:
         return path_from_tag
 
     def __format_response(self, path_from_tag: str) -> Dict:
-        return { 
-            "data": "Tag Image",
-            "count": 1,
-            "path": f'{path_from_tag}.png'
+        return {
+            "data": {
+                "type": "Tag Image",
+                "count": 1,
+                "path": f'{path_from_tag}.png'
+            }
         }
